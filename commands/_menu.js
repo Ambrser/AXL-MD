@@ -121,7 +121,7 @@ Secktor.cmd({
         filename: __filename
     },
     async(Void, citel) => {
-        const Config = require('../config')
+        const Config = require('../config')}
         const vcard = 'BEGIN:VCARD\n' +
             'VERSION:3.0\n' +
             'FN:' + Config.ownername + '\n' +
@@ -129,20 +129,18 @@ Secktor.cmd({
             'TEL;type=CELL;type=VOICE;waid=' + owner[0] + ':+' + owner[0] + '\n' +
             'END:VCARD'
         let buttonMessaged = {
-            contacts: { displayName: Config.ownername, contacts: [{ vcard }] },
+            contacts: { displayName: Config.ownername, contacts: [{ vcard }] }},
             contextInfo: {
                 externalAdReply: {
                     title: Config.ownername,
-                    body: 'Touch here.',
+                    body: 'Touch here.',}
                     renderLargerThumbnail: true,
                     thumbnailUrl: ``,
                     thumbnail: log0,
-                    mediaType: 2,
+                    mediaType: 2
                     mediaUrl: '',
-                    sourceUrl: `https://wa.me/919539412641?text=Hii bro,I am ' + citel.pushName,
-                },
-            },
-        };
+                    sourceUrl:'https://wa.me/919539412641'}
+                
         return await Void.sendMessage(citel.chat, buttonMessaged, {
             quoted: citel,
         });
