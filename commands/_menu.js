@@ -62,16 +62,16 @@ Secktor.cmd({
                 {
                    str += `╭────❏ *${tiny(category)}* ❏\n` ;
                    if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ *${tiny(category)}* ❏\n` ;      
-                        for (const plugins of cmds[category]) { str += `*┃𖤍* ${fancytext(plugins,1)}\n` ; }
+                        for (const plugins of cmds[category]) { str += `┃ ${fancytext(plugins,1)}\n` ; }
                         str += `╰━━━━━━━━━━━━━──⊷\n`  ;
                         break ;
                    }
-                   else { for (const plugins of cmds[category]) { str += `*┃𖤍* ${fancytext(plugins,1)}\n` ; }
+                   else { for (const plugins of cmds[category]) { str += `┃ ${fancytext(plugins,1)}\n` ; }
                          str += `╰━━━━━━━━━━━━━━──⊷\n`  ; 
                    }
   
                 }
-                str+= `*⭐️Type:* _${prefix}help cmd_ name to know more about specific command.\n*Eg:* _${prefix}help attp_\n*Made with ❤️ in Nodejs* `
+                str+= `*ᴀxʟ-ʙᴏᴛ-ᴍᴅ* `
                 let buttonMessaged = {
                     image: { url: await botpic() },
                     caption: str
