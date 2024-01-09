@@ -44,34 +44,34 @@ Secktor.cmd({
                 let total = await sck1.countDocuments()
                 let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
-                    '' + `│ ╭──────────────◆
-┃✵┃ *ᴜꜱᴇʀ:-* ${citel.pushName}
-┃✵┃ *ᴛʜᴇᴍᴇ :-* ${tlang().title}
-┃✵┃ *ᴩʀᴇꜰɪx:-* [ ${prefix} ]
-┃✵┃ *ᴏᴡɴᴇʀ:-* ${Config.ownername}
-┃✵┃ *ᴩʟᴜɢɪɴꜱ:-* ${commands.length}
-┃✵┃ *ᴜꜱᴇʀꜱ:-* ${total}
-┃✵┃ *ᴜᴩᴛɪᴍᴇ:-*  ${runtime(process.uptime())}
-┃✵┃ *ʀᴀᴍ:-* ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃✵┃ *ᴛɪᴍᴇ:-* ${time}
-┃✵┃ *ᴅᴀᴛᴇ:-* ${date}
-┃ ╰──────────────◆
+                    '```' + `│ ╭──────────────◆
+│ │ User:- ${citel.pushName}
+│ │ Theme:- ${tlang().title}
+│ │ Prefix:- [ ${prefix} ]
+│ │ Owner:- ${Config.ownername}
+│ │ Plugins:- ${commands.length}
+│ │ Users:- ${total}
+│ │ Uptime:- ${runtime(process.uptime())}
+│ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+│ │ Time:- ${time}
+│ │ Date:- ${date}
+│ ╰──────────────◆
 ╰───────────────⊷\n
-` + ''
+` + '```'
                 for (const category in cmds) 
                 {
                    str += `╭────❏ *${tiny(category)}* ❏\n` ;
                    if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ *${tiny(category)}* ❏\n` ;      
-                        for (const plugins of cmds[category]) { str += `┃ ${fancytext(plugins,1)}\n` ; }
+                        for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
                         str += `╰━━━━━━━━━━━━━──⊷\n`  ;
                         break ;
                    }
-                   else { for (const plugins of cmds[category]) { str += `┃ ${fancytext(plugins,1)}\n` ; }
+                   else { for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
                          str += `╰━━━━━━━━━━━━━━──⊷\n`  ; 
                    }
   
                 }
-                str+= `*ᴀxʟ-ʙᴏᴛ-ᴍᴅ* `
+                str+= `*👨🏻‍💻\n\n𝘼𝙓𝙇 - 𝙈𝘿 𖤍* `
                 let buttonMessaged = {
                     image: { url: await botpic() },
                     caption: str
@@ -82,7 +82,7 @@ Secktor.cmd({
     )
     //---------------------------------------------------------------------------
 Secktor.cmd({
-            pattern: "help",
+            pattern: "list",
             desc: "list menu",
             category: "general"
         },
@@ -121,7 +121,7 @@ Secktor.cmd({
         filename: __filename
     },
     async(Void, citel) => {
-        const Config = require('../config')}
+        const Config = require('../config')
         const vcard = 'BEGIN:VCARD\n' +
             'VERSION:3.0\n' +
             'FN:' + Config.ownername + '\n' +
@@ -129,18 +129,20 @@ Secktor.cmd({
             'TEL;type=CELL;type=VOICE;waid=' + owner[0] + ':+' + owner[0] + '\n' +
             'END:VCARD'
         let buttonMessaged = {
-            contacts: { displayName: Config.ownername, contacts: [{ vcard }] }},
+            contacts: { displayName: Config.ownername, contacts: [{ vcard }] },
             contextInfo: {
                 externalAdReply: {
                     title: Config.ownername,
-                    body: 'Touch here.',}
+                    body: 'Touch here.',
                     renderLargerThumbnail: true,
                     thumbnailUrl: ``,
                     thumbnail: log0,
-                    mediaType: 2
+                    mediaType: 2,
                     mediaUrl: '',
-                    sourceUrl:'https://wa.me/919539412641'}
-                
+                    sourceUrl: `https://wa.me/+` + owner[0] + '?text=Hii bro,I am ' + citel.pushName,
+                },
+            },
+        };
         return await Void.sendMessage(citel.chat, buttonMessaged, {
             quoted: citel,
         });
