@@ -44,16 +44,16 @@ Secktor.cmd({
                 let total = await sck1.countDocuments()
                 let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=`│ ╭──────────────◆
-┃𖤍┃ User:- ${citel.pushName}
-┃𖤍┃ Theme:- ${tlang().title}
-┃𖤍┃ Prefix:- [ ${prefix} ]
-┃𖤍┃ Owner:- ${Config.ownername}
-┃𖤍┃ Plugins:- ${commands.length}
-┃𖤍┃ Users:- ${total}
-┃𖤍┃ Uptime:- ${runtime(process.uptime())}
-┃𖤍┃ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃𖤍┃ Time:- ${time}
-┃𖤍┃ Date:- ${date}
+┃𖤍┃ *ᴜꜱᴇʀ:-*  ${citel.pushName}
+┃𖤍┃ *ᴛʜᴇᴍᴇ:-*  ${tlang().title}
+┃𖤍┃ *ᴩʀᴇꜰɪx:-*  [ ${prefix} ]
+┃𖤍┃ *ᴏᴡɴᴇʀ:-* ${Config.ownername}
+┃𖤍┃ *ᴩʟᴜɢɪɴꜱ:-*  ${commands.length}
+┃𖤍┃ *ᴜꜱᴇʀᴇꜱ:-*  ${total}
+┃𖤍┃ *ᴜᴩᴛɪᴍᴇ:-*  ${runtime(process.uptime())}
+┃𖤍┃ *ʀᴀᴍ:-*  ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃𖤍┃ *ᴛɪᴍᴇ:-*  ${time}
+┃𖤍┃ *ᴅᴀᴛᴇ:-* ${date}
 ┃ ╰──────────────◆
 ╰───────────────⊷\n
 `
