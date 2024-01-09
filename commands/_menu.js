@@ -43,8 +43,7 @@ Secktor.cmd({
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 let total = await sck1.countDocuments()
                 let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》─────⊷\n`
-                str +=
-                    '```' + `│ ╭──────────────◆
+                str +=`│ ╭──────────────◆
 ┃𖤍┃ User:- ${citel.pushName}
 ┃𖤍┃ Theme:- ${tlang().title}
 ┃𖤍┃ Prefix:- [ ${prefix} ]
@@ -57,7 +56,7 @@ Secktor.cmd({
 ┃𖤍┃ Date:- ${date}
 ┃ ╰──────────────◆
 ╰───────────────⊷\n
-` + '```'
+`
                 for (const category in cmds) 
                 {
                    str += `╭────❏ *${tiny(category)}* ❏\n` ;
